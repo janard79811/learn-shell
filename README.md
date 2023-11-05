@@ -1,2 +1,2 @@
 # learn-shell
-Shell scripting topics started
+List of Shell scripting topics
