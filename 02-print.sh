@@ -12,5 +12,5 @@ echo Hello World
  # CYAN          - 36
 # \e[0m - This is disable the enabled color
 
-echo -e "\e31m This text in red color \e[0m"
-echo -e "\e33m This text in yellow color \e[0m"
+echo -e "[e31m This text in red color \e[0m"
+echo -e "[e33m This text in yellow color \e[0m"
