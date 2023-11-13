@@ -1,7 +1,8 @@
 sample() {
-  echo Hello
+  echo function input - $*
+  echo function number of arguments - $#
 }
 
-sample
+sample Hello World
 
 #sample - function name
