@@ -16,7 +16,9 @@ done
 # Provided arithmetic expression because loop will continue infinite times as everytime $a will called as 10 only
 # With sleep 1 is not mandatory & even using that also you can execute that's fine (but sleep 1 is given because to get the o/p each step 1 by 1 after every 1 second since sleep value given as 1
 
-for fruit in mango gauva grapes; do
+for fruit in mango gauva grapes ; do
   echo fruit name - $fruit
   sleep 1
 done
+
+# space between semi colon & 3 fruit names in 1st line is not mandatory & if you provide also then even no issues.
