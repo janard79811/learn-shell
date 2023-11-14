@@ -1,0 +1,63 @@
+Operations can be done in CLI (sed editor):
+---------------------------------------------
+1) Search and replace
+2) Delete the lines
+3) Add the lines
+4) Replace the lines
+Note: Add, delete the words are as similar to search and replace only
+
+Assume we have a file like this:
+
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+
+1) sed 's/nologin/yeslogin/' file
+ s-> substitute
+'s/nologin/yeslogin/' - says that substitute nologin with yeslogin i.e. replacing that
+Note: The file remains same for the above command but the o/p will only be shown using sed command.
+
+To modify the file:
+We use -i option to sed command. else it does only change in o/p but not the file content change.
+By using -i option to sed command, we cannot see the o/p by using command but if you open the file i.e. using cat file in server then you can see the o/p changed in the file.
+
+
+Replace root with amdin:
+sed 's/root/admin/' file
+Note: sed editor - works like if it modifies 1 time in a line then it goes to the next line - so o/p you will see as not completely done.
+
+To modify the complete line with above replace:
+we use g at the end of the ''.
+i.e. sed 's/root/admin/g' file
+ g- global i.e. entire line any where it will be replaced.
+
+
+2) Delete lines (in 2 ways):
+        d - delete
+1 - give a Line number (For e.g. sed '2d' file - To delete 2nd line)
+2 - search a word & delete those lines (For e.g. sed '/yeslogin/d' file - To delete the lines containing yeslogin term)
+
+3) Add lines (in 2 ways):
+      a - add
+1 - give a line number (to add a line below to that line number)
+For e.g. To add a line next to 2nd line - sed '2 a Hello world' file (2 - indicates below to 2nd line add the information)
+2 - search a word & add a line below to that word line
+For e.g. word i.e. yeslogin & add a line below to that word line - sed '/yeslogin/ a Hello world' file
+
+4) Replace lines (in 2 ways):
+        c - change
+1 - sed '2 c Hello world' file
+2 - sed '/yeslogin/ c Hello world' file
+
+
+Note:
+a) Additionally, if you want to modify the file content as well for 2), 3), 4),, as discussed in 1) - Use -i option after sed in the syntax so that file content will be changed.
+b) sed -e '2 a Hello world' -e '1d' file
+    -e option is used to enable multiple operations in single sed command.
+
+
+
+
+
+
