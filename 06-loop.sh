@@ -8,6 +8,7 @@
 a=10
 while [ "$a" -gt 0 ]; do
   echo Hello World
-  done
+  a=$(($a-1))
+done
 
-# The above while loop is used as its an expression & the above loop will print Hello world for infinite times as everytime calling  $a =10 only.
+# The above while loop is used as its an expression & the above loop will print Hello world for 10 times until $a=1
