@@ -9,6 +9,9 @@ a=10
 while [ "$a" -gt 0 ]; do
   echo Hello World
   a=$(($a-1))
+  sleep 1
 done
 
 # The above while loop is used as its an expression & the above loop will print Hello world for 10 times until $a=1
+# Provided arithmetic expression because loop will continue infinite times as everytime $a will called as 10 only
+# With sleep 1 also you can execute that's fine (but sleep 1 is given because to get the o/p each step 1 by 1 after every 1 second since sleep value given as 1
